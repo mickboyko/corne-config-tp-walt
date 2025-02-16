@@ -122,10 +122,10 @@
         //   |      |     |     |     |     |     |               |     |     |     |     |     |      |
         //                      |     |     |     |               |     |     |     |
                                 bindings = <
-        &trans  &trans &trans &trans &trans &trans           &trans &trans    &trans    &trans &trans &trans &trans
-        &trans  &trans &trans &trans &trans &trans           &trans &mkp LCLK &mpk RCLK &trans &trans &trans &trans
-        &trans  &trans &trans &trans &trans &trans           &trans &trans    &mpk MCLK &trans &trans &trans &trans
-                            &trans  &trans &trans           &trans &trans &trans
+        &trans  &trans &trans &trans &trans    &trans           &trans &trans    &trans    &trans &trans &trans &trans
+        &trans  &trans &trans &trans &mkp MCLK &trans           &trans &mkp LCLK &mkp RCLK &trans &trans &trans &trans
+        &trans  &trans &trans &trans &trans    &trans           &trans &trans    &mkp MCLK &trans &trans &trans &trans
+                              &tran  &trans    &trans           &trans &trans &trans
                         >;
                 };
 
