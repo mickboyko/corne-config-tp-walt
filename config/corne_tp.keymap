@@ -71,9 +71,9 @@
         //   |      |     |     |     |     |     |               |     |     |     |     |     |      |
         //                      |     |     |     |               |     |     |     |
                                 bindings = <
-        &mms MS_TP_SENSITIVITY_INCR  &mms MS_TP_VALUE6_INCR &mms MS_TP_NEG_INERTIA_INCR &trans &trans    &trans           &trans &trans    &trans    &trans &trans &trans &trans
-        &mms MS_TP_SENSITIVITY_DECR  &mms MS_TP_VALUE6_DECR &mms MS_TP_NEG_INERTIA_DECR &trans &mkp MCLK &trans           &trans &mkp LCLK &mkp RCLK &trans &trans &trans &trans
-        &trans                       &trans                 &trans                      &trans &trans    &trans           &trans &trans    &mkp MCLK &trans &trans &trans &trans
+        &mms MS_TP_SENSITIVITY_INCR  &mms MS_TP_VALUE6_INCR &mms MS_TP_NEG_INERTIA_INCR &trans &trans    &trans           &trans &trans    &trans    &trans &trans &transkl
+        &mms MS_TP_SENSITIVITY_DECR  &mms MS_TP_VALUE6_DECR &mms MS_TP_NEG_INERTIA_DECR &trans &mkp MCLK &trans           &trans &mkp LCLK &mkp RCLK &trans &trans &trans
+        &trans                       &trans                 &trans                      &trans &trans    &trans           &trans &trans    &mkp MCLK &trans &trans &trans
                                                                                         &trans &trans    &trans           &trans &trans &trans
                         >;
                 };
