@@ -21,58 +21,7 @@
 #endif // HAS_MOUSE_TP
 
 / {
-//    chosen {
-//        //zmk,physical-layout = &foostan_corne_5col_layout;
-//        zmk,matrix-transform = &five_column_transform;
-//    };
 
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <360>;
-            require-prior-idle-ms = <180>;
-            quick-tap-ms = <320>;
-        };
-        spcr: space_return {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp RET>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        itl: inner_thumb_layers {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&mo>, <&spcr>;
-
-            flavor = "balanced";
-            tapping-term-ms = <420>;
-            require-prior-idle-ms = <180>;
-            quick-tap-ms = <380>;
-        };
-        otl: outer_thumb_layers {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&mo>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <420>;
-            require-prior-idle-ms = <180>;
-            quick-tap-ms = <380>;
-        };
-        mtl: mouse_thumb_layers {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&mo>, <&mkp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <380>;
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -115,7 +64,21 @@
                     	        &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
-        mouse_layer {
+        mouse_layer0 {
+                        // -----------------------------------------------------------------------------------------
+        //   |      |     |     |     |     |     |               |     |     |     |     |     |      |
+        //   |      |     |     |     |     |     |               |     |     |     |     |     |      |
+        //   |      |     |     |     |     |     |               |     |     |     |     |     |      |
+        //                      |     |     |     |               |     |     |     |
+                                bindings = <
+        &mms MS_TP_SENSITIVITY_INCR  &mms MS_TP_VALUE6_INCR &mms MS_TP_NEG_INERTIA_INCR &trans &trans    &trans           &trans &trans    &trans    &trans &trans &trans &trans
+        &mms MS_TP_SENSITIVITY_DECR  &mms MS_TP_VALUE6_DECR &mms MS_TP_NEG_INERTIA_DECR &trans &mkp MCLK &trans           &trans &mkp LCLK &mkp RCLK &trans &trans &trans &trans
+        &trans                       &trans                 &trans                      &trans &trans    &trans           &trans &trans    &mkp MCLK &trans &trans &trans &trans
+                                                                                        &trans &trans    &trans           &trans &trans &trans
+                        >;
+                };
+
+        mouse_layer1 {
                         // -----------------------------------------------------------------------------------------
         //   |      |     |     |     |     |     |               |     |     |     |     |     |      |
         //   |      |     |     |     |     |     |               |     |     |     |     |     |      |
@@ -131,17 +94,4 @@
 
     }; 
 
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <60>;
-            key-positions = <32 33>;
-            bindings = <&kp ESC>;
-        };
-        combo_caps {
-            timeout-ms = <30>;
-            key-positions = <11 18>;
-            bindings = <&kp CAPS>;
-        };
-    };
 };

@@ -79,9 +79,9 @@
     layer-toggle-timeout-ms = <500>; 
 };
 
-//&trackpoint_listener { 
-//    input-processors = <&zip_temp_layer MOUSE 500>;
-//};
+&trackpoint_listener { 
+    input-processors = <&zip_temp_layer MOUSE 500>;
+};
 
 /*
 * Mouse Driver Settings
